@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://haoluoluo.github.io/2020/05/17/install-ubuntu/</loc>
+    
+    <lastmod>2020-05-18T02:02:46.816Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://haoluoluo.github.io/categories/index.html</loc>
     
     <lastmod>2020-05-18T00:59:19.910Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://haoluoluo.github.io/2020/05/15/home/</loc>
     
     <lastmod>2020-05-17T18:55:43.497Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haoluoluo.github.io/2020/05/17/install-ubuntu/</loc>
-    
-    <lastmod>2020-05-17T18:48:18.135Z</lastmod>
     
   </url>
   
