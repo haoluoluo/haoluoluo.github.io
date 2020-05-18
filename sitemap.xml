@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://haoluoluo.github.io/2020/05/17/install-ubuntu-md/</loc>
+    <loc>http://haoluoluo.github.io/categories/index.html</loc>
     
-    <lastmod>2020-05-17T18:17:15.512Z</lastmod>
+    <lastmod>2020-05-18T00:59:19.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://haoluoluo.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-05-18T00:59:00.851Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://haoluoluo.github.io/2020/05/15/home/</loc>
+    
+    <lastmod>2020-05-17T18:55:43.497Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://haoluoluo.github.io/2020/05/17/install-ubuntu/</loc>
+    
+    <lastmod>2020-05-17T18:48:18.135Z</lastmod>
     
   </url>
   
@@ -26,27 +47,6 @@
     <loc>http://haoluoluo.github.io/404.html</loc>
     
     <lastmod>2020-05-15T16:03:50.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haoluoluo.github.io/2020/05/15/home/</loc>
-    
-    <lastmod>2020-05-15T11:12:53.944Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haoluoluo.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-05-14T18:01:57.403Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haoluoluo.github.io/categories/index.html</loc>
-    
-    <lastmod>2020-05-14T17:32:00.600Z</lastmod>
     
   </url>
   
