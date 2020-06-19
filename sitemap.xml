@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://haoluoluo.github.io/2020/06/19/leetcode-2AddTwoNumbers/</loc>
+    
+    <lastmod>2020-06-19T10:02:17.700Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://haoluoluo.github.io/2020/06/03/leetcode-1TwoSum/</loc>
     
     <lastmod>2020-06-03T13:44:33.321Z</lastmod>
