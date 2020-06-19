@@ -1,4 +1,552 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta name="generator" content="Hexo 4.2.1"><link rel="apple-touch-icon" sizes="180x180" href="/images/batman-apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/batman-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/batman-16x16.png"><link rel="mask-icon" href="/images/logo.png" color="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="google-site-verification" content="YQDUWQVNkRsSfKbIDzWl-uzg0_hVq3QeasmEKujhCFg"><meta name="msvalidate.01" content="13C26B46DF414639BECD7AC8E631A329"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css"><script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script><script id="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:"haoluoluo.github.io",root:"/",scheme:"Gemini",version:"7.8.0",exturl:!0,sidebar:{position:"left",display:"post",padding:18,offset:12,onmobile:!1},copycode:{enable:!0,show_result:!0,style:null},back2top:{enable:!0,sidebar:!1,scrollpercent:!0},bookmark:{enable:!1,color:"#222",save:"auto"},fancybox:!0,mediumzoom:!0,lazyload:!0,pangu:!0,comments:{style:"tabs",active:null,storage:!0,lazyload:!0,nav:null},algolia:{appID:"0CBJECU1GT",apiKey:"31ac23cd5f8b4d32a486f87dd5e1133e",indexName:"dev_blogs",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}},localsearch:{enable:!0,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1},motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},path:"./public/search.xml"}</script><meta name="description" content="Win10与Ubuntu 16.04双系统安装教程安装前准备工作制作启动U盘我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。"><meta property="og:type" content="article"><meta property="og:title" content="安装ubuntu"><meta property="og:url" content="http://haoluoluo.github.io/2020/05/17/install-ubuntu/index.html"><meta property="og:site_name" content="管锥"><meta property="og:description" content="Win10与Ubuntu 16.04双系统安装教程安装前准备工作制作启动U盘我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2020-05-17T11:59:19.000Z"><meta property="article:modified_time" content="2020-05-25T07:20:20.401Z"><meta property="article:author" content="HaoLuo"><meta property="article:tag" content="ubuntu"><meta property="article:tag" content=" 安装"><meta name="twitter:card" content="summary"><link rel="canonical" href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/"><script id="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,lang:"zh-CN"}</script><meta name="keywords" content="ubuntu, 安装"><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script><title>安装ubuntu | 管锥</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript><link rel="alternate" href="/atom.xml" title="管锥" type="application/atom+xml"></head><body itemscope itemtype="http://schema.org/WebPage"><div class="container use-motion"><div class="headband"></div><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div></div><div class="site-meta"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span><h1 class="site-title">管锥</h1><span class="logo-line-after"><i></i></span></a><p class="site-subtitle" itemprop="description">以管窥天，以锥刺地</p></div><div class="site-nav-right"><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class="site-nav"><ul id="menu" class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i> 首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i> 归档</a></li><li class="menu-item menu-item-search"><a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 搜索</a></li></ul></nav><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-icon"><i class="fa fa-search"></i></span><div class="search-input-container"></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div id="algolia-pagination" class="algolia-pagination"></div></div></div></div></div></header><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span>0%</span></div><span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hhb2x1b2x1bw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></span><main class="main"><div class="main-inner"><div class="content-wrap"><div class="content post posts-expand"><article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.png"><meta itemprop="name" content="HaoLuo"><meta itemprop="description" content="天行健，君子以自强不息"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="管锥"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">安装ubuntu</h1><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2020-05-17 19:59:19" itemprop="dateCreated datePublished" datetime="2020-05-17T19:59:19+08:00">2020-05-17</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar-check"></i></span> <span class="post-meta-item-text">更新于</span> <time title="修改时间：2020-05-25 15:20:20" itemprop="dateModified" datetime="2020-05-25T15:20:20+08:00">2020-05-25</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span></span><span id="/2020/05/17/install-ubuntu/" class="post-meta-item leancloud_visitors" data-flag-title="安装ubuntu" title="阅读次数"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count"></span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span> <span class="post-meta-item-text">评论：</span><a title="valine" href="/2020/05/17/install-ubuntu/#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2020/05/17/install-ubuntu/" itemprop="commentCount"></span></a></span><br><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i></span> <span class="post-meta-item-text">本文字数：</span> <span>3k</span></span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span>5 分钟</span></span></div></header><div class="post-body" itemprop="articleBody"><h3 id="Win10与Ubuntu-16-04双系统安装教程"><a href="#Win10与Ubuntu-16-04双系统安装教程" class="headerlink" title="Win10与Ubuntu 16.04双系统安装教程"></a>Win10与Ubuntu 16.04双系统安装教程</h3><h3 id="安装前准备工作"><a href="#安装前准备工作" class="headerlink" title="安装前准备工作"></a>安装前准备工作</h3><h4 id="制作启动U盘"><a href="#制作启动U盘" class="headerlink" title="制作启动U盘"></a>制作启动U盘</h4><p>我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。</p><a id="more"></a><p>首先需要准备好一个2G以上的空U盘（因为之后的操作需要格式化，所以空U盘最好）。</p><p>在Ubuntu官网下载<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZA==">Ubuntu<i class="fa fa-external-link-alt"></i></span><br>的ISO安装文件。如果上面的链接有问题，可以从<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZC9hbHRlcm5hdGl2ZS1kb3dubG9hZHM=">这里<i class="fa fa-external-link-alt"></i></span>使用BT方式下载，<br>或者在其他mirror站点下载。</p><p>按照官网步骤下载<span class="exturl" data-url="aHR0cHM6Ly9ydWZ1cy5ha2VvLmllLw==">Rufus<i class="fa fa-external-link-alt"></i></span>并使用上一步中下载好的ISO文件制作启动U盘：<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZC9kZXNrdG9wL2NyZWF0ZS1hLXVzYi1zdGljay1vbi13aW5kb3dz">How to create a bootable USB stick on Windows<i class="fa fa-external-link-alt"></i></span></p><h4 id="电脑磁盘分区"><a href="#电脑磁盘分区" class="headerlink" title="电脑磁盘分区"></a>电脑磁盘分区</h4><p>在安装系统之前，需要事先给它分配一定的磁盘空间。其实也可以直接在非Windows系统盘（C盘）上直接安装，但是这样的话如果以后想对Ubuntu系统有单独的操作（比如删除或者别的）就会比较麻烦，所以建议给Ubuntu系统单独分配一定的空间。</p><p>在Win10系统中，我们可以通过控制面板/系统和安全/管理工具/创建并格式化硬盘分区，进入磁盘管理工具。 磁盘管理工具<br>选择一个剩余容量多的分区，右键 &gt; 压缩卷 &gt; 选择合适大小 ，我选择的是100G(一般50G就够用了）</p><p>现在准备工作就绪，可以准备安装了。</p><h3 id="安装Ubuntu系统"><a href="#安装Ubuntu系统" class="headerlink" title="安装Ubuntu系统"></a>安装Ubuntu系统</h3><h4 id="设置BIOS为U盘启动"><a href="#设置BIOS为U盘启动" class="headerlink" title="设置BIOS为U盘启动"></a>设置BIOS为U盘启动</h4><p>将制作好的启动U盘插在电脑上，重启电脑，开机时进入BIOS选择从U盘启动。</p><p>不同品牌的电脑BIOS设置不同，请自行百度。</p><h4 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h4><p>等待片刻，进入Ubuntu系统欢迎界面，选择中文，点击右侧“<span style="color:red">安装Ubuntu</span>”开始安装。 欢迎界面 也可以选左边先使用Ubuntu系统体验一下（此时没有安装），然后从桌面左上角双击“安装Ubuntu 16.04LTS”图标开始安装。</p><p>准备安装界面，勾选“<span style="color:red">为图形或无线硬件…</span>”，然后点击“继续”（还需要等待一小会儿）。 准备安装界面注意：如果这步花费时间很长说明是网络问题，请关闭无线网络，拔掉网线之后再重试。</p><p>安装类型界面，选择“<span style="color:red">其他选项</span>”，然后“<span style="color:red">继续</span>”。</p><p>接下来是关键的分配分区环节。 分配分区界面 我最大的疑问也在这里，大部分资料认为应该划分四个分区，分别为挂载为“/”，“/home”，“交换空间”和“/boot”。</p><p>此处有争议，我在这里给出我安装时的分配方案：</p><table><thead><tr><th>分区</th><th>类型</th><th>位置</th><th>文件系统</th><th>挂载点</th><th>大小（100G）</th></tr></thead><tbody><tr><td>“/”</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/</td><td>约1/3，34G</td></tr><tr><td>home</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/home</td><td>剩余所有</td></tr><tr><td>交换空间</td><td>逻辑分区</td><td>起始位置</td><td></td><td>交换空间</td><td>内存二倍</td></tr><tr><td>/boot</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/boot</td><td>200MB</td></tr></tbody></table><p>注意：安装启动引导器的设备选择“/boot分区”</p><p>eufi启动方式安装</p><table><thead><tr><th>分区</th><th>类型</th><th>位置</th><th>文件系统</th><th>挂载点</th><th>大小（100G）</th></tr></thead><tbody><tr><td>“/”</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/</td><td>约1/3，34G</td></tr><tr><td>home</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/home</td><td>剩余所有</td></tr><tr><td>交换空间</td><td>逻辑分区</td><td>起始位置</td><td></td><td>交换空间</td><td>内存二倍</td></tr><tr><td>/efi</td><td>逻辑分区</td><td>起始位置</td><td>Ext4</td><td>/efi</td><td>1G</td></tr></tbody></table><p>注意：安装启动引导器的设备选择“/efi分区”<br>下面的说明引用自Windows下安装Ubuntu 16.04双系统：</p><p>&lt;1&gt;、“/”分区大致相当于windows下的系统盘（C盘），存放系统文件，当在Ubuntu下安装一些软件时，有可以选择路径的，就可以选择“/home”里面,即自定义软件安装路径，但还有一些不能选择安装路径的，就会安装到“/”分区，大部分软件是默认安装到“/”分区下的。还有一点就是这个分区下是不能像平时一样选择”删除”、”复制”、”粘贴”的，选择一个文件或文件夹，右键，是没有这些”删除”…选项的（我不确定是不是所有的文件和文件夹都是这样，毕竟我没有都试一遍）。（当然可以通过一些命令来实现”删除”、”复制”、”粘贴”、”新建”这些功能的，）</p><p>&lt;2&gt;、“/home”分区，这个就相当于windows下的非系统盘，像D盘、E盘、F盘…，除了一些特殊的文件，可以像在windows下一样，任意”删除”、”复制”、”粘贴”、”新建”，平时下载的东西都会保存在这个分区，这个分区主要就是用来存放文件。</p><p>&lt;3&gt;、”交换空间”，虚拟内存。我总共为这个Ubuntu系统分配了70G的空间，根据我的需要”/” –30G, ”/home“–35G，“交换空间”–5G,由于想把Ubuntu作为我的主系统，需要多安装一些自己编程，学习，平时使用的一些琐碎的软件，所以我把”/”分区分的大了一些。（之前用Ubuntu14.04也是这么分的，当我安装了我需要的软件之　后，满足编程，平时办公之后，”/”分区大概还剩下17-18G，”/home”还剩下20多G，当然是因为，我把能选则安装路径的大都安装在了”/home”下，还下载了7-8G 的视频放在了”/home“下，我把我之前的磁盘使用情况说一下，希望会在你们分配空间大小时能够有所帮助）</p><p>当上面的分区分好之后，点击”现在安装“,再次确认分区，然后一路简单的“选择位置”、“键盘布局”、“创建用户”之后继续，开始安装，请耐心等待。 正在安装界面</p><p>安装成功后重启电脑，如果你在之前的步骤中在安装启动引导器的设备选择“/boot分区”的话，此时会自动进入Windows系统，此时需要添加系统启动项才能进入新系统。</p><h3 id="双系统兼容问题"><a href="#双系统兼容问题" class="headerlink" title="双系统兼容问题"></a>双系统兼容问题</h3><p>经过上面的步骤，Win10和Ubuntu双系统已经安装成功了。但是经常在两个系统间切换的朋友可能会发现它们之间有一些兼容的问题，下面介绍其中一些我遇到的问题。</p><h4 id="同步系统时间"><a href="#同步系统时间" class="headerlink" title="同步系统时间"></a>同步系统时间</h4><p>下面解决方案引用自：解决ubuntu和windows双系统时间差异8小时的方法及Win10+Ubuntu双系统安装完成后时间不一致相差大概8小时</p><p>Windows/Ubuntu 双系统用户会发现在 Ubuntu 里面的时间正常的情况下Windows的系统时间被改到8小时前。原来 Linux 操作系统是以 CMOS 时间做为格林威治标准时间，再根据系统设置的时区来确定目前系统时间。但是Windows 会直接修改CMOS 时间。而中国的时区是+8区，所以才会造成时间被调整了-8个小时。</p><p>所以您可以让 Windows 去使用时区或者让 Ubuntu 使用本地时间。</p><p>解决方案如下：</p><p>Windows：(此方法没有测试）</p><p>修改 Windows 使用时区的方法是在注册表：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\</span><br></pre></td></tr></table></figure><p>下面增加一个名为RealTimeIsUniversal的REG_DWORD键，并赋值为1。</p><p>Ubuntu(16.04之前)：</p><p>而让Ubuntu 使用本地时间的方法是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/default/rcS</span><br></pre></td></tr></table></figure><p>把里面的UTC=yes改为UTC=no</p><p>Ubuntu(16.04及以后)：</p><p>打开终端输入</p><p>先在Ubuntu下更新一下时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ntpdate</span><br></pre></td></tr></table></figure><p>使用window的</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ntpdate time.windows.com</span><br></pre></td></tr></table></figure><p>将时间更新到硬件上</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hwclock --localtime --systohc</span><br></pre></td></tr></table></figure><p>回车重启！OK了</p><h3 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h3><p>先安装Windows10 SP1 64位版，后使用U盘安装Ubuntu 14.04.1。Ubuntu安装成功后，可正常启动，而GRUB上选择Windows 10菜单项，无法启动到Win10界面，直接返回GRUB菜单界面。</p><p>解决办法 <span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2FpbWFnaWMvYXJ0aWNsZS9kZXRhaWxzLzM5NTMyOTEx">这里<i class="fa fa-external-link-alt"></i></span></p></div><div><div style="text-align:center;color:#ccc;font-size:14px">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div></div><div class="reward-container"><div></div><button onclick='var qr=document.getElementById("qr");qr.style.display="none"===qr.style.display?"block":"none"'>打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/wechatpay.png" alt="HaoLuo 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/alipay.png" alt="HaoLuo 支付宝"><p>支付宝</p></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong> HaoLuo</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/" title="安装ubuntu">http://haoluoluo.github.io/2020/05/17/install-ubuntu/</a></li><li class="post-copyright-license"><strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用<span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i> BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a></div><div class="post-widgets"><div class="wp_rating"><div id="wpac-rating"></div></div></div><div class="post-nav"><div class="post-nav-item"><a href="/2020/05/15/home/" rel="prev" title="简介"><i class="fa fa-chevron-left"></i> 简介</a></div><div class="post-nav-item"><a href="/2020/05/20/java-date/" rel="next" title="Java 中有关日期时间的使用">Java 中有关日期时间的使用<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="tabs tabs-comment"><ul class="nav-tabs"><li class="tab"><a href="#comment-disqus">disqus</a></li><li class="tab"><a href="#comment-gitalk">gitalk</a></li><li class="tab"><a href="#comment-valine">valine</a></li></ul><div class="tab-content"><div class="tab-pane disqus" id="comment-disqus"><div class="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript></div></div></div><div class="tab-pane gitalk" id="comment-gitalk"><div class="comments" id="gitalk-container"></div></div><div class="tab-pane valine" id="comment-valine"><div class="comments" id="valine-comments"></div></div></div></div><script>window.addEventListener('tabs:register', () => {
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/batman-apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/batman-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/batman-16x16.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="YQDUWQVNkRsSfKbIDzWl-uzg0_hVq3QeasmEKujhCFg">
+  <meta name="msvalidate.01" content="13C26B46DF414639BECD7AC8E631A329">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"haoluoluo.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"appID":"0CBJECU1GT","apiKey":"31ac23cd5f8b4d32a486f87dd5e1133e","indexName":"dev_blogs","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="Win10与Ubuntu 16.04双系统安装教程安装前准备工作制作启动U盘我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装ubuntu">
+<meta property="og:url" content="http://haoluoluo.github.io/2020/05/17/install-ubuntu/index.html">
+<meta property="og:site_name" content="管锥">
+<meta property="og:description" content="Win10与Ubuntu 16.04双系统安装教程安装前准备工作制作启动U盘我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-17T11:59:19.000Z">
+<meta property="article:modified_time" content="2020-05-25T07:20:20.401Z">
+<meta property="article:author" content="HaoLuo">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content=" 安装">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+ 
+  <meta name="keywords" content="ubuntu, 安装" />
+
+
+<!--<meta name="google-site-verification" content="YQDUWQVNkRsSfKbIDzWl-uzg0_hVq3QeasmEKujhCFg" />  -->
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+  <title>安装ubuntu | 管锥</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="管锥" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">管锥</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">以管窥天，以锥刺地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hhb2x1b2x1bw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="HaoLuo">
+      <meta itemprop="description" content="天行健，君子以自强不息">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="管锥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          安装ubuntu
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-17 19:59:19" itemprop="dateCreated datePublished" datetime="2020-05-17T19:59:19+08:00">2020-05-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-25 15:20:20" itemprop="dateModified" datetime="2020-05-25T15:20:20+08:00">2020-05-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/05/17/install-ubuntu/" class="post-meta-item leancloud_visitors" data-flag-title="安装ubuntu" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2020/05/17/install-ubuntu/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/17/install-ubuntu/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Win10与Ubuntu-16-04双系统安装教程"><a href="#Win10与Ubuntu-16-04双系统安装教程" class="headerlink" title="Win10与Ubuntu 16.04双系统安装教程"></a>Win10与Ubuntu 16.04双系统安装教程</h3><h3 id="安装前准备工作"><a href="#安装前准备工作" class="headerlink" title="安装前准备工作"></a>安装前准备工作</h3><h4 id="制作启动U盘"><a href="#制作启动U盘" class="headerlink" title="制作启动U盘"></a>制作启动U盘</h4><p>我是使用U盘的方式来安装Ubuntu系统的，因此主要介绍这种方式。</p>
+<a id="more"></a>
+<p>首先需要准备好一个2G以上的空U盘（因为之后的操作需要格式化，所以空U盘最好）。</p>
+<p>在Ubuntu官网下载<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZA==">Ubuntu<i class="fa fa-external-link-alt"></i></span><br>的ISO安装文件。如果上面的链接有问题，可以从<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZC9hbHRlcm5hdGl2ZS1kb3dubG9hZHM=">这里<i class="fa fa-external-link-alt"></i></span>使用BT方式下载，<br>或者在其他mirror站点下载。</p>
+<p>按照官网步骤下载<span class="exturl" data-url="aHR0cHM6Ly9ydWZ1cy5ha2VvLmllLw==">Rufus<i class="fa fa-external-link-alt"></i></span>并使用上一步中下载好的ISO文件制作启动U盘：<span class="exturl" data-url="aHR0cHM6Ly93d3cudWJ1bnR1LmNvbS9kb3dubG9hZC9kZXNrdG9wL2NyZWF0ZS1hLXVzYi1zdGljay1vbi13aW5kb3dz">How to create a bootable USB stick on Windows<i class="fa fa-external-link-alt"></i></span></p>
+<h4 id="电脑磁盘分区"><a href="#电脑磁盘分区" class="headerlink" title="电脑磁盘分区"></a>电脑磁盘分区</h4><p>在安装系统之前，需要事先给它分配一定的磁盘空间。其实也可以直接在非Windows系统盘（C盘）上直接安装，但是这样的话如果以后想对Ubuntu系统有单独的操作（比如删除或者别的）就会比较麻烦，所以建议给Ubuntu系统单独分配一定的空间。</p>
+<p>在Win10系统中，我们可以通过控制面板/系统和安全/管理工具/创建并格式化硬盘分区，进入磁盘管理工具。 磁盘管理工具<br>选择一个剩余容量多的分区，右键 &gt; 压缩卷 &gt; 选择合适大小 ，我选择的是100G(一般50G就够用了）</p>
+<p>现在准备工作就绪，可以准备安装了。</p>
+<h3 id="安装Ubuntu系统"><a href="#安装Ubuntu系统" class="headerlink" title="安装Ubuntu系统"></a>安装Ubuntu系统</h3><h4 id="设置BIOS为U盘启动"><a href="#设置BIOS为U盘启动" class="headerlink" title="设置BIOS为U盘启动"></a>设置BIOS为U盘启动</h4><p>将制作好的启动U盘插在电脑上，重启电脑，开机时进入BIOS选择从U盘启动。</p>
+<p>不同品牌的电脑BIOS设置不同，请自行百度。</p>
+<h4 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h4><p>等待片刻，进入Ubuntu系统欢迎界面，选择中文，点击右侧“<span style="color:red">安装Ubuntu</span>”开始安装。 欢迎界面 也可以选左边先使用Ubuntu系统体验一下（此时没有安装），然后从桌面左上角双击“安装Ubuntu 16.04LTS”图标开始安装。</p>
+<p>准备安装界面，勾选“<span style="color:red">为图形或无线硬件…</span>”，然后点击“继续”（还需要等待一小会儿）。 准备安装界面注意：如果这步花费时间很长说明是网络问题，请关闭无线网络，拔掉网线之后再重试。</p>
+<p>安装类型界面，选择“<span style="color:red">其他选项</span>”，然后“<span style="color:red">继续</span>”。</p>
+<p>接下来是关键的分配分区环节。 分配分区界面 我最大的疑问也在这里，大部分资料认为应该划分四个分区，分别为挂载为“/”，“/home”，“交换空间”和“/boot”。</p>
+<p>此处有争议，我在这里给出我安装时的分配方案：</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>类型</th>
+<th>位置</th>
+<th>文件系统</th>
+<th>挂载点</th>
+<th>大小（100G）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“/”</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/</td>
+<td>约1/3，34G</td>
+</tr>
+<tr>
+<td>home</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/home</td>
+<td>剩余所有</td>
+</tr>
+<tr>
+<td>交换空间</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td></td>
+<td>交换空间</td>
+<td>内存二倍</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/boot</td>
+<td>200MB</td>
+</tr>
+</tbody></table>
+<p>注意：安装启动引导器的设备选择“/boot分区”</p>
+<p>eufi启动方式安装</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>类型</th>
+<th>位置</th>
+<th>文件系统</th>
+<th>挂载点</th>
+<th>大小（100G）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“/”</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/</td>
+<td>约1/3，34G</td>
+</tr>
+<tr>
+<td>home</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/home</td>
+<td>剩余所有</td>
+</tr>
+<tr>
+<td>交换空间</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td></td>
+<td>交换空间</td>
+<td>内存二倍</td>
+</tr>
+<tr>
+<td>/efi</td>
+<td>逻辑分区</td>
+<td>起始位置</td>
+<td>Ext4</td>
+<td>/efi</td>
+<td>1G</td>
+</tr>
+</tbody></table>
+<p>注意：安装启动引导器的设备选择“/efi分区”<br>下面的说明引用自Windows下安装Ubuntu 16.04双系统：</p>
+<p>&lt;1&gt;、“/”分区大致相当于windows下的系统盘（C盘），存放系统文件，当在Ubuntu下安装一些软件时，有可以选择路径的，就可以选择“/home”里面,即自定义软件安装路径，但还有一些不能选择安装路径的，就会安装到“/”分区，大部分软件是默认安装到“/”分区下的。还有一点就是这个分区下是不能像平时一样选择”删除”、”复制”、”粘贴”的，选择一个文件或文件夹，右键，是没有这些”删除”…选项的（我不确定是不是所有的文件和文件夹都是这样，毕竟我没有都试一遍）。（当然可以通过一些命令来实现”删除”、”复制”、”粘贴”、”新建”这些功能的，）</p>
+<p>&lt;2&gt;、“/home”分区，这个就相当于windows下的非系统盘，像D盘、E盘、F盘…，除了一些特殊的文件，可以像在windows下一样，任意”删除”、”复制”、”粘贴”、”新建”，平时下载的东西都会保存在这个分区，这个分区主要就是用来存放文件。</p>
+<p>&lt;3&gt;、”交换空间”，虚拟内存。我总共为这个Ubuntu系统分配了70G的空间，根据我的需要”/” –30G, ”/home“–35G，“交换空间”–5G,由于想把Ubuntu作为我的主系统，需要多安装一些自己编程，学习，平时使用的一些琐碎的软件，所以我把”/”分区分的大了一些。（之前用Ubuntu14.04也是这么分的，当我安装了我需要的软件之　后，满足编程，平时办公之后，”/”分区大概还剩下17-18G，”/home”还剩下20多G，当然是因为，我把能选则安装路径的大都安装在了”/home”下，还下载了7-8G 的视频放在了”/home“下，我把我之前的磁盘使用情况说一下，希望会在你们分配空间大小时能够有所帮助）</p>
+<p>当上面的分区分好之后，点击”现在安装“,再次确认分区，然后一路简单的“选择位置”、“键盘布局”、“创建用户”之后继续，开始安装，请耐心等待。 正在安装界面</p>
+<p>安装成功后重启电脑，如果你在之前的步骤中在安装启动引导器的设备选择“/boot分区”的话，此时会自动进入Windows系统，此时需要添加系统启动项才能进入新系统。</p>
+<h3 id="双系统兼容问题"><a href="#双系统兼容问题" class="headerlink" title="双系统兼容问题"></a>双系统兼容问题</h3><p>经过上面的步骤，Win10和Ubuntu双系统已经安装成功了。但是经常在两个系统间切换的朋友可能会发现它们之间有一些兼容的问题，下面介绍其中一些我遇到的问题。</p>
+<h4 id="同步系统时间"><a href="#同步系统时间" class="headerlink" title="同步系统时间"></a>同步系统时间</h4><p>下面解决方案引用自：解决ubuntu和windows双系统时间差异8小时的方法及Win10+Ubuntu双系统安装完成后时间不一致相差大概8小时</p>
+<p>Windows/Ubuntu 双系统用户会发现在 Ubuntu 里面的时间正常的情况下Windows的系统时间被改到8小时前。原来 Linux 操作系统是以 CMOS 时间做为格林威治标准时间，再根据系统设置的时区来确定目前系统时间。但是Windows 会直接修改CMOS 时间。而中国的时区是+8区，所以才会造成时间被调整了-8个小时。</p>
+<p>所以您可以让 Windows 去使用时区或者让 Ubuntu 使用本地时间。</p>
+<p>解决方案如下：</p>
+<p>Windows：(此方法没有测试）</p>
+<p>修改 Windows 使用时区的方法是在注册表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\</span><br></pre></td></tr></table></figure>
+<p>下面增加一个名为RealTimeIsUniversal的REG_DWORD键，并赋值为1。</p>
+<p>Ubuntu(16.04之前)：</p>
+<p>而让Ubuntu 使用本地时间的方法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/default/rcS</span><br></pre></td></tr></table></figure>
+<p>把里面的UTC=yes改为UTC=no</p>
+<p>Ubuntu(16.04及以后)：</p>
+<p>打开终端输入</p>
+<p>先在Ubuntu下更新一下时间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ntpdate</span><br></pre></td></tr></table></figure>
+<p>使用window的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ntpdate time.windows.com</span><br></pre></td></tr></table></figure>
+<p>将时间更新到硬件上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hwclock --localtime --systohc</span><br></pre></td></tr></table></figure>
+<p>回车重启！OK了</p>
+<h3 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h3><p>先安装Windows10 SP1 64位版，后使用U盘安装Ubuntu 14.04.1。Ubuntu安装成功后，可正常启动，而GRUB上选择Windows 10菜单项，无法启动到Win10界面，直接返回GRUB菜单界面。</p>
+<p>解决办法 <span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2FpbWFnaWMvYXJ0aWNsZS9kZXRhaWxzLzM5NTMyOTEx">这里<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="HaoLuo 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="HaoLuo 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>HaoLuo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://haoluoluo.github.io/2020/05/17/install-ubuntu/" title="安装ubuntu">http://haoluoluo.github.io/2020/05/17/install-ubuntu/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/15/home/" rel="prev" title="简介">
+      <i class="fa fa-chevron-left"></i> 简介
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/20/java-date/" rel="next" title="Java 中有关日期时间的使用">
+      Java 中有关日期时间的使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-disqus">disqus</a></li>
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane disqus" id="comment-disqus">
+              
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -16,7 +564,314 @@
       let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
-  }</script></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div><aside class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10与Ubuntu-16-04双系统安装教程"><span class="nav-number">1.</span> <span class="nav-text">Win10与Ubuntu 16.04双系统安装教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前准备工作"><span class="nav-number">2.</span> <span class="nav-text">安装前准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#制作启动U盘"><span class="nav-number">2.1.</span> <span class="nav-text">制作启动U盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电脑磁盘分区"><span class="nav-number">2.2.</span> <span class="nav-text">电脑磁盘分区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Ubuntu系统"><span class="nav-number">3.</span> <span class="nav-text">安装Ubuntu系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置BIOS为U盘启动"><span class="nav-number">3.1.</span> <span class="nav-text">设置BIOS为U盘启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装过程"><span class="nav-number">3.2.</span> <span class="nav-text">安装过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双系统兼容问题"><span class="nav-number">4.</span> <span class="nav-text">双系统兼容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同步系统时间"><span class="nav-number">4.1.</span> <span class="nav-text">同步系统时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#故障现象"><span class="nav-number">5.</span> <span class="nav-text">故障现象</span></a></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" alt="HaoLuo" src="/images/avatar.png"><p class="site-author-name" itemprop="name">HaoLuo</p><div class="site-description" itemprop="description">天行健，君子以自强不息</div></div><div class="site-state-wrap motion-element"><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">5</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">3</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">4</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="sidebar-button motion-element"><a onclick="tidioChatApi.open()"><i class="fa fa-comment"></i> Chat</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hhb2x1b2x1bw==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;haoluoluo"><i class="fab fa-github fa-fw"></i> GitHub</span></span><span class="links-of-author-item"><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS96ZGFpb3Q=" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zdaiot"><i class="fa fa-book fa-fw"></i> zhihu</span></span></div><div class="cc-license motion-element" itemprop="license"><span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span></div><div id="days"></div><script>function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("04/16/2020 16:00:00"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="相恋"+daysold+" 天 "}function setzero(e){return e<10&&(e="0"+e),e}show_date_time()</script></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2020</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">HaoLuo</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-chart-area"></i></span> <span title="站点总字数">9k</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-coffee"></i></span> <span title="站点阅读时长">16 分钟</span></div><script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script><span id="sitetime"></span><script language="javascript">function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,o=new Date,i=o.getFullYear(),a=o.getMonth()+1,n=o.getDate(),r=o.getHours(),l=o.getMinutes(),s=o.getSeconds(),M=Date.UTC(2020,3,4,16,0,0),g=Date.UTC(i,a,n,r,l,s)-M,m=Math.floor(g/31536e6),T=Math.floor(g/t-365*m),f=Math.floor((g-(365*m+T)*t)/e),h=Math.floor((g-(365*m+T)*t-f*e)/6e4),u=Math.floor((g-(365*m+T)*t-f*e-6e4*h)/1e3);document.getElementById("sitetime").innerHTML=" 相识"+T+" 天 "+f+" 小时 "+h+" 分钟 "+u+" 秒"}siteTime()</script></div></footer></div><script src="/lib/anime.min.js"></script><script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script><script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script><script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script><script src="/lib/velocity/velocity.min.js"></script><script src="/lib/velocity/velocity.ui.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/pisces.js"></script><script src="/js/next-boot.js"></script><script>var pjax = new Pjax({
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10与Ubuntu-16-04双系统安装教程"><span class="nav-number">1.</span> <span class="nav-text">Win10与Ubuntu 16.04双系统安装教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前准备工作"><span class="nav-number">2.</span> <span class="nav-text">安装前准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#制作启动U盘"><span class="nav-number">2.1.</span> <span class="nav-text">制作启动U盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电脑磁盘分区"><span class="nav-number">2.2.</span> <span class="nav-text">电脑磁盘分区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Ubuntu系统"><span class="nav-number">3.</span> <span class="nav-text">安装Ubuntu系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置BIOS为U盘启动"><span class="nav-number">3.1.</span> <span class="nav-text">设置BIOS为U盘启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装过程"><span class="nav-number">3.2.</span> <span class="nav-text">安装过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双系统兼容问题"><span class="nav-number">4.</span> <span class="nav-text">双系统兼容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同步系统时间"><span class="nav-number">4.1.</span> <span class="nav-text">同步系统时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#故障现象"><span class="nav-number">5.</span> <span class="nav-text">故障现象</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HaoLuo"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">HaoLuo</p>
+  <div class="site-description" itemprop="description">天行健，君子以自强不息</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    <a onclick="tidioChatApi.open();"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hhb2x1b2x1bw==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;haoluoluo"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS96ZGFpb3Q=" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zdaiot"><i class="fa fa-book fa-fw"></i>zhihu</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+<!-- MUSIC-->
+
+
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay = new Date("04/16/2020 16:00:00");
+    today = new Date();
+    timeold = (today.getTime() - BirthDay.getTime());
+    sectimeold = timeold / 1000
+    secondsold = Math.floor(sectimeold);
+    msPerDay = 24 * 60 * 60 * 1000
+    e_daysold = timeold / msPerDay
+    daysold = Math.floor(e_daysold);
+    e_hrsold = (e_daysold - daysold) * 24;
+    hrsold = setzero(Math.floor(e_hrsold));
+    e_minsold = (e_hrsold - hrsold) * 60;
+    minsold = setzero(Math.floor((e_hrsold - hrsold) * 60));
+    seconds = setzero(Math.floor((e_minsold - minsold) * 60));
+    document.getElementById('days').innerHTML= "相恋" + daysold + " 天 ";
+}
+function setzero(i) {
+    if (i < 10) {
+        i = "0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HaoLuo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">16 分钟</span>
+</div>
+<script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,03,04,16,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 相识"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+
+        
+
+
+
+
+
+
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"RrQR0C6TKuffgkYTFOUbIbmM-gzGzoHsz","app_key":"5Wp8m6aE5ItsQupBECD5vHDs","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
   selectors: [
     'head title',
     '#page-configurations',
@@ -71,7 +926,56 @@ window.addEventListener('pjax:success', () => {
       .bootstrap();
   }
   NexT.utils.updateSidebarPosition();
-});</script><script data-pjax>CONFIG.page.isPost&&(wpac_init=window.wpac_init||[],wpac_init.push({widget:"Rating",id:25510,el:"wpac-rating",color:"fc6423"}),function(){if(!("WIDGETPACK_LOADED"in window)){WIDGETPACK_LOADED=!0;var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//embed.widgetpack.com/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t.nextSibling)}}())</script><script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="/js/algolia-search.js"></script><script src="//code.tidio.co/9hdhmrn5ek4cinhcfxab3f08eevxsifg.js"></script><script data-pjax>if (document.querySelectorAll('pre.mermaid').length) {
+});
+</script>
+
+
+
+
+  
+
+
+
+  <script data-pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 25510,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+  <script src="//code.tidio.co/9hdhmrn5ek4cinhcfxab3f08eevxsifg.js"></script>
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
       theme    : 'forest',
@@ -81,13 +985,27 @@ window.addEventListener('pjax:success', () => {
       sequence : { actorMargin: 50 }
     });
   }, window.mermaid);
-}</script><div id="pjax"><script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script><script>window.addEventListener('load', () => {
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
       quicklink({
         timeout : 3000,
         priority: true,
         ignores : [uri => uri.includes('#'),uri => uri === 'http://haoluoluo.github.io/2020/05/17/install-ubuntu/',]
       });
-      });</script><script>var disqus_config = function() {
+      });
+  </script>
+
+<script>
+  var disqus_config = function() {
     this.page.url = "http://haoluoluo.github.io/2020/05/17/install-ubuntu/";
     this.page.identifier = "2020/05/17/install-ubuntu/";
     this.page.title = "安装ubuntu";
@@ -104,7 +1022,13 @@ window.addEventListener('pjax:success', () => {
       s.setAttribute('data-timestamp', '' + +new Date());
       (d.head || d.body).appendChild(s);
     }
-  });</script><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"><script>NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  });
+</script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID    : '064551cb7517c65df35d',
@@ -118,7 +1042,12 @@ window.addEventListener('pjax:success', () => {
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
-});</script><script>NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.4.14/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
@@ -135,11 +1064,16 @@ window.addEventListener('pjax:success', () => {
       avatar     : 'mm',
       meta       : guest,
       pageSize   : '10' || 10,
-      visitor    : true,
+      visitor    : false,
       lang       : 'zh-CN' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
       serverURLs : ''
     });
   }, window.Valine);
-});</script></div><script src="false"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,debug:!1,model:{jsonPath:"/live2dw/assets/hijiki.model.json"},display:{position:"right",width:150,height:300},mobile:{show:!0},react:{opacity:.7},log:!1})</script></body></html>
+});
+</script>
+
+    </div>
+<script src="false"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
