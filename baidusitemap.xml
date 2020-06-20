@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://haoluoluo.github.io/2020/06/20/leetcode-3LongestSubstringWithoutRepeatingCharacters/</loc>
+    <lastmod>2020-06-20</lastmod>
+  </url>  <url>
     <loc>http://haoluoluo.github.io/2020/06/19/leetcode-2AddTwoNumbers/</loc>
     <lastmod>2020-06-19</lastmod>
   </url>  <url>
